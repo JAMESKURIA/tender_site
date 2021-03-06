@@ -1,0 +1,114 @@
+.post-section {
+  width: var(--width);
+  margin: 10% auto;
+  padding: 2rem 2rem 3rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow: var(--box-shadow); */
+  box-shadow: 3px 3px 7px rgb(231, 227, 227), -3px -3px 7px rgb(231, 227, 227);
+}
+
+/* Intro-section */
+.intro-section {
+  background: url(../images/pexels-cottonbro.jpg);
+}
+
+.post-section h1 {
+  font-weight: 600;
+  font-size: calc(var(--primary-size) + 12px);
+  text-transform: capitalize;
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+.post-section h2 {
+  margin-bottom: 0rem;
+  margin-top: -1.5rem;
+  font-size: calc(var(--primary-size) + 2px);
+  font-weight: 500;
+  color: #333;
+  font-style: oblique;
+}
+
+.post-section .inputs {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  padding: 1rem;
+}
+
+.post-section .inputs .description {
+  grid-column: 1/4;
+}
+
+.post-section .inputs input {
+  height: 3rem;
+  width: 60%;
+  border: none;
+  outline: none;
+  margin: 0.4rem 0px;
+  margin-left: 10%;
+  border-radius: 5px;
+  padding: 0px 12px;
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: 500;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.post-section .inputs input:hover {
+  box-shadow: var(--hover-box-shadow);
+}
+
+.post-section .inputs > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-section .inputs > div label {
+  font-size: calc(var(--primary-size) - 1px);
+}
+
+.post-section .inputs .date #date {
+  cursor: pointer;
+}
+
+.post-section .inputs .date #name {
+  text-transform: capitalize;
+}
+
+.post-section .inputs .description {
+  margin-top: 3%;
+}
+
+/* Upload section */
+.upload-section {
+  height: 20vh;
+  border: 2px dashed /*#767676*/ #c2cdda;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.upload-section button {
+  justify-self: center;
+  height: 4rem;
+  width: 12rem;
+  border: 1px solid #ccc;
+  background: none;
+  color: #00004bef;
+}
+
+.upload-section p {
+  color: #767676;
+}
+
+#post-tender-button {
+  height: 3.5rem;
+  width: 20%;
+  margin-top: 5%;
+  align-self: flex-end;
+}

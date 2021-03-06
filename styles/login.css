@@ -1,0 +1,235 @@
+/* header
+ .navlinks li:nth-of-type(3) a {
+  cursor: none;
+  pointer-events: none;
+} */
+.navlinks li:nth-of-type(4) a {
+  box-shadow: var(--box-shadow);
+}
+
+/* Intro-section */
+.intro-section {
+  background: url(../images/pexels-olia-danilevich-4974915.jpg);
+  background-position: right top;
+}
+
+/* container */
+.container {
+  min-height: 80vh;
+  width: 100%;
+}
+
+.container-content {
+  /* top: 30%; */
+  width: calc(var(--width) - 10%);
+  margin: 20vh auto;
+  position: relative;
+}
+
+/* login-section */
+.login-section,
+.register-section {
+  position: absolute;
+  width: 100%;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  box-shadow: 3px 3px 7px rgb(231, 227, 227), -3px -3px 7px rgb(231, 227, 227);
+}
+
+.login-now,
+.register-now,
+.login-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: var(--width);
+  margin: auto;
+  position: relative;
+}
+
+.login-now h3,
+.register-now h3,
+.login-social h3 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: var(--primary-size);
+}
+.login-now input,
+.register-now input,
+.send-button-div input,
+.login-now #login-rank {
+  height: 3rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 0.4rem 0px;
+  border-radius: 5px;
+  padding: 0px 12px;
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.login-now #login-rank {
+  height: 2.5rem;
+  width: 40%;
+  align-self: flex-start;
+  cursor: pointer;
+}
+
+.send-button-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.send-button-div input[type="submit"] {
+  width: calc(var(--width) - 45%);
+  font-size: calc(var(--primary-size) - 2px);
+  margin-top: 1.5rem;
+  font-weight: 550;
+  background-color: var(--primary-color);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.send-button-div input[type="submit"]:hover {
+  /* background-color: var(--primary-hover); */
+  box-shadow: var(--hover-box-shadow);
+}
+
+.send-button-div a,
+.send-button-div #existing-account {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: calc(var(--primary-size) - 2px);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.send-button-div a:hover,
+.send-button-div #existing-account:hover {
+  color: var(--primary-hover);
+}
+
+/* login social */
+.login-social > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 3rem;
+  box-shadow: 2px 2px 5px rgb(231, 227, 227);
+  border-radius: 5px;
+  overflow: hidden;
+  color: #fff;
+  cursor: pointer;
+}
+.login-social > div i {
+  color: #fff;
+  height: 100%;
+  width: 10%;
+  display: grid;
+  place-items: center;
+  transition: transform 0.2s infinite;
+}
+.login-social > div:hover {
+  box-shadow: var(--hover-box-shadow);
+}
+.login-social > div:hover i:last-of-type {
+  transform: translateX(5%);
+}
+
+/* facebook */
+.login-social .facebook {
+  background-color: #3b5999;
+}
+.login-social .facebook i:first-of-type {
+  background-color: #355089;
+}
+
+/* twitter */
+.login-social .twitter {
+  margin: 1rem 0px;
+  background-color: #55acee;
+}
+.login-social .twitter i:first-of-type {
+  background-color: #4c9ad6;
+}
+
+/* google */
+.login-social .google {
+  background-color: #dd4b39;
+}
+.login-social .google i:first-of-type {
+  background-color: #c64333;
+}
+
+.login-now::after,
+.register-now::after {
+  content: "OR";
+  position: absolute;
+  right: -15%;
+  background-color: #fff;
+  top: 50%;
+  transform: translate(50%, -50%);
+  z-index: 1;
+  margin: 0.5rem 0px;
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: 500;
+  text-align: center;
+  padding: 6px 8px 8px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  box-shadow: 0px 18px #fff, 0px -18px #fff;
+}
+
+.login-social::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10%;
+  height: 100%;
+  width: 2px;
+  background-color: #ccc;
+}
+
+/* two buttons */
+.two-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-100% - 6px));
+  height: 2.5rem;
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 2;
+}
+
+.two-buttons > button {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-weight: normal;
+  font-size: calc(var(--primary-size) - 4px);
+  cursor: pointer;
+}
+
+.two-buttons > button:first-of-type {
+  color: #00bcd4;
+  box-shadow: 2px -2px 5px rgb(231, 227, 227), -2px -2px 5px rgb(231, 227, 227);
+}
+.two-buttons > button:last-of-type {
+  box-shadow: inset 2px -2px 3px rgb(231, 227, 227),
+    inset -1px 1px 1px rgb(231, 227, 227);
+  color: #333;
+}
+
+.register-section {
+  display: none;
+}

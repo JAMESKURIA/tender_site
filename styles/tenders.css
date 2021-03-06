@@ -1,0 +1,224 @@
+.tenders-page .intro-section {
+  background-image: url(../images/pexels-andrew-neel-2312369.jpg);
+}
+.featured-tenders {
+  width: calc(var(--width) - 5%);
+  margin: 4rem auto;
+}
+
+.featured-tenders h1 {
+  font-weight: 600;
+  font-size: calc(var(--primary-size) + 4px);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+.featured-tenders .tender {
+  display: grid;
+  grid-gap: 1rem;
+  place-items: center;
+  min-height: 30vh;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 1.5rem 0px 2rem 2rem;
+  padding-bottom: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 5px;
+  overflow: auto;
+  /* box-sizing: border-box; */
+  position: relative;
+}
+
+.featured-tenders .tender:hover {
+  box-shadow: var(--hover-box-shadow);
+  border-left: 5px solid var(--primary-color);
+  transition: 0.2s ease;
+  /* width: calc(100% + 5px); */
+}
+
+.featured-tenders .tender:hover .short-details .tender-number {
+  box-shadow: var(--box-shadow);
+}
+
+.featured-tenders .tender .short-details {
+  justify-self: start;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-tenders .tender .short-details .tender-name {
+  font-weight: 550;
+  font-size: calc(var(--primary-size) + 5px);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-tenders .tender .short-details .owner,
+.featured-tenders .tender .short-details .closing-date {
+  font-weight: 500;
+  font-size: calc(var(--primary-size) - 2px);
+  color: #333;
+  padding: 0.2rem 0px;
+}
+
+.featured-tenders .tender .short-details .owner span {
+  text-transform: capitalize;
+  color: var(--primary-color);
+}
+
+.featured-tenders .tender .short-details .closing-date span {
+  color: var(--primary-color);
+  font-weight: 550;
+}
+
+.featured-tenders .tender button {
+  width: calc(var(--width) - 40%);
+}
+
+.featured-tenders .tender .tender-description {
+  width: 100%;
+}
+
+.featured-tenders .tender .tender-description h2 {
+  font-weight: 600;
+  font-size: var(--primary-size);
+  color: #00003a;
+}
+
+.featured-tenders .tender .tender-description #p {
+  margin-left: -0.2rem;
+  margin-top: -0.2rem;
+  width: 95%;
+  height: auto;
+  /* resize: none; */
+  box-shadow: none;
+}
+
+.featured-tenders .tender .tender-description #p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  margin: 0.5rem 0px 0px 1rem;
+  line-height: 1.3em;
+  font-size: calc(var(--primary-size) - 1.5px);
+  letter-spacing: 0.8px;
+  color: #00004bef;
+}
+
+.featured-tenders .tender .show {
+  margin-top: 1rem;
+  margin-bottom: -2rem;
+  font-size: 18px;
+  font-weight: 500;
+  justify-self: flex-start;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.featured-tenders .tender .show:hover {
+  color: #0000ff;
+}
+
+.featured-tenders .tender .buttons {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 3%;
+}
+.featured-tenders .tender .buttons:nth-child() {
+  border: 1px solid #00004bef;
+}
+
+.featured-tenders .tender .buttons button:nth-of-type(2) {
+  background-color: var(--secondary-color);
+  color: #0000ff;
+  justify-self: flex-end;
+  margin-right: 20%;
+}
+
+.featured-tenders .tender .bid-amount {
+  display: flex;
+  align-items: flex-end;
+  height: 2.5rem;
+  justify-self: flex-end;
+  font-size: calc(var(--primary-size) - 1px);
+  font-weight: 550;
+  margin-left: 5%;
+  border: none;
+  outline: none;
+  /* display: none; */
+}
+
+.featured-tenders .tender .bid-amount label {
+  margin-right: 1rem;
+  color: #333;
+  /* font-style: oblique; */
+}
+
+.featured-tenders .tender #bid-amount {
+  height: 100%;
+  width: calc(var(--width) - 60%);
+  margin-left: 1%;
+  border: 1px solid #c2cdda;
+  box-shadow: var(--box-shadow);
+  outline: none;
+  border-radius: 3px;
+  font-size: calc(var(--primary-size) - 1px);
+  padding: 0px 12px;
+}
+.featured-tenders .tender #bid-amount:hover {
+  box-shadow: var(--hover-box-shadow);
+}
+
+.featured-tenders .tender .tender-number {
+  position: absolute;
+  top: 1.5rem;
+  right: 3rem;
+  font-weight: 600;
+  color: rgb(119, 114, 114);
+  border: 1px solid #c2cdda;
+  /* box-shadow: var(--box-shadow); */
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+.featured-tenders .tender .tender-number span {
+  color: var(--primary-color);
+}
+
+.featured-tenders .tender #cover-letter {
+  margin-top: 4%;
+  width: 90%;
+  min-height: 20vh;
+  font-size: calc(var(--primary-size) - 1.5px);
+  font-weight: lighter;
+  color: #000;
+  /* display: none; */
+}
+
+/* Show more/ show less */
+.excerpt-hidden {
+  height: 5rem;
+  overflow: hidden;
+  position: relative;
+}
+/* .excerpt-hidden::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0.4) 0%,
+    rgb(255, 255, 255, 1) 100%
+  );
+} */
+.excerpt-visible {
+  height: auto;
+  overflow: auto;
+}

@@ -1,0 +1,60 @@
+header {
+  background-color: rgba(0, 0, 0, 0.388);
+}
+
+table,
+th,
+td {
+  border-collapse: separate;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+table {
+  border: 1px solid #333;
+  padding: 0;
+  /* width: var(--width); */
+  margin: auto;
+  margin-bottom: 2rem;
+}
+/* 
+.biddings-section .biddings-table {
+  width: 800px;
+} */
+
+th {
+  background-color: rgb(155, 44, 44);
+  color: aliceblue;
+  font-weight: 550;
+}
+
+td {
+  color: rgb(34, 31, 31);
+}
+
+tr:nth-of-type(even) {
+  background-color: rgb(211, 198, 198);
+}
+
+tr:nth-of-type(odd) {
+  background-color: rgb(255, 255, 255);
+}
+
+.biddings-table .desc {
+  text-align: start;
+  width: 700px;
+}
+
+.biddings-section {
+  margin: 2rem 0px;
+}
+
+.biddings-section h1 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-left: 10%;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,57 @@
+/* Hero-section */
+header {
+  height: 16vh;
+}
+.hero-section {
+  height: 84vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background-image: url(../images/pexels-fauxels.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.hero-section:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  opacity: 0.2;
+}
+
+.hero-content {
+  width: calc(var(--width) - 20%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h3 {
+  font-size: calc(var(--primary-size) + 40px);
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.hero-content h2 {
+  font-size: calc(var(--primary-size) + 60px);
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: 1.5px;
+}
+
+.hero-content h2 span {
+  color: var(--secondary-color);
+}
+
+.hero-content p {
+  font-size: calc(var(--primary-size) + 7px);
+  padding: 0px 0px 1rem 0px;
+  width: calc(var(--width) - 20%);
+  letter-spacing: 1px;
+  margin: auto;
+}

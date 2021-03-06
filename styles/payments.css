@@ -1,0 +1,15 @@
+.payment-inputs input {
+  height: 3rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 0.4rem 0px;
+  border-radius: 5px;
+  padding: 0px 12px;
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.payment-inputs button{
+  background-color:var(--primary-color);
+}
