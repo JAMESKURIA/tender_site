@@ -10,6 +10,7 @@
   overflow: hidden;
 }
 
-.payment-inputs button{
-  background-color:var(--primary-color);
+.payment-inputs button {
+  background-color: var(--primary-color);
 }
+

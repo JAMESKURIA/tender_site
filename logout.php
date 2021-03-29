@@ -6,7 +6,7 @@ if (isset($_SESSION['user_name'])) {
     unset($_SESSION['user_name']);
     unset($_SESSION['email']);
 
-    header("location: index.php");
+    header("location: ./index.php");
 }
 else{
     unset($_SESSION['admin_id']);

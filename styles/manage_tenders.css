@@ -1,0 +1,38 @@
+.manage-tenders input {
+  height: 3rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  outline: none;
+  margin: 0.4rem 0px;
+  border-radius: 5px;
+  padding: 0px 12px;
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: 500;
+  overflow: hidden;
+}
+
+.manage-tenders input:hover{
+  box-shadow: var(--hover-box-shadow);
+}
+
+.manage-tenders .tender-name input {
+  width: 40%;
+}
+
+.manage-tenders .tender-number input {
+  height: 2rem;
+}
+
+.manage-tenders textarea {
+  box-shadow: var(--box-shadow);
+  width: 90%;
+}
+.manage-tenders textarea:hover {
+  box-shadow: var(--hover-box-shadow);
+}
+
+.manage-tenders .tender-name label{
+  font-size: calc(var(--primary-size) - 2px);
+  font-weight: lighter;
+  color: #333;
+}

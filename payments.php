@@ -20,6 +20,16 @@ $bids = mysqli_fetch_all($user_bids, MYSQLI_ASSOC);
 include './includes/header.php';
 ?>
 
+<section class="intro-section" style="height: 30vh;">
+        <div class="intro-section-content">
+            <h2>Make a Payment</h2>
+            <div class="navigation">
+                <h3><a href="./admin.php">Dashboard</a></h3>
+                <i class="fas fa-chevron-right"></i>
+                <h3>Payments</h3>
+            </div>
+        </div>
+    </section>
 
 <div class="biddings-section">
     <h1>Make payments</h1>

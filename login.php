@@ -1,27 +1,8 @@
-<!-- <?php
-if (!isset($_SESSION)) {
-    session_start();
-
-    if ($_SESSION['user_name']) {
-        $user = $_SESSION['user_name'];
-        $email = $_SESSION['email'];
-        $id = $_SESSION['bidder_id'];
-    } else if ($_SESSION['admin_name']) {
-        $user = $_SESSION['admin_name'];
-        $email = $_SESSION['email'];
-        $id = $_SESSION['admin_id'];
-    }
-}
-
-
-
-include './assets/register.php';
-include './assets/login_handler.php';
-?> -->
-
 <!-- Header -->
 <?php
 include './includes/header.php';
+include './assets/register.php';
+include './assets/login_handler.php';
 ?>
 
 <!-- Main section -->

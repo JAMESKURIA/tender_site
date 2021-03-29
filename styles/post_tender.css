@@ -21,6 +21,7 @@
   margin-bottom: 4rem;
   text-transform: capitalize;
   color: var(--primary-color);
+  /* color: rgb(155, 44, 44); */
 }
 
 .post-section h2 {

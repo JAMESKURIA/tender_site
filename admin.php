@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
         $email = $_SESSION['email'];
         $id = $_SESSION['admin_id'];
     } else {
-        header("Location: ../login.php");
+        header("Location: ./login.php");
     }
 }
 
@@ -66,9 +66,18 @@ include './includes/header.php';
 ?>
 
 <main>
+    <section class="intro-section" style="height: 30vh;">
+        <div class="intro-section-content">
+            <h2>Positivity all through</h2>
+            <div class="navigation">
+                <h3><a href="./admin.php">Dashboard</a>
+            </div>
+        </div>
+    </section>
+
+    <p style="margin-top: 2rem; font-size:large; margin-left: 2rem;">welcome <span style="color: var(--primary-color);"><?php echo $user;  ?></span></p>
     <!-- Biddings section -->
-    <section class="biddings-section">
-        welcome <?php echo $user ?>
+    <section class="biddings-section" style="margin-top: -2rem;">
         <h1>Present Biddings</h1>
         <table class="biddings-table">
             <thead>
@@ -76,7 +85,7 @@ include './includes/header.php';
                     <th>BIDDING_ID</th>
                     <th>AMOUNT_BID</th>
                     <th>DESCRIPTION</th>
-                    <th>TENDER_ID</th>
+                    <th>TENDER_NO</th>
                     <th>BIDDING_DATE</th>
                     <th>BIDDER_ID</th>
                     <th>APPROVE</th>
@@ -89,13 +98,20 @@ include './includes/header.php';
                             <td><?php echo $bid['BIDDING_ID'] ?></td>
                             <td><?php echo $bid['BIDDING_TOTAL_COST'] ?></td>
                             <td class="desc"><?php echo $bid['BIDDING_DESC'] ?></td>
-                            <td><?php echo $bid['BIDDING_TENDER_ID'] ?></td>
+
+                            <?php
+                            $t_id = $bid['BIDDING_TENDER_ID'];
+                            $tender_number = mysqli_query($db, "SELECT TENDER_NUMBER FROM TENDER WHERE TENDER_ID = $t_id");
+                            $number = mysqli_fetch_assoc($tender_number);
+                            $t_number = $number['TENDER_NUMBER'];
+                            ?>
+                            <td><?php echo $t_number ?></td>
                             <td><?php echo $bid['BIDDING_DATE'] ?></td>
                             <td><?php echo  $bid['BIDDING_BIDDER_ID'] ?></td>
-                            <td class="btn"><button>approve</button></td>
+                            <td class="btn btn-approved"><button>approve</button></td>
                         </tr>
                 <?php endforeach;
-                else : echo "Bid More for your Tenders to appear here";
+                else : echo "<tr><td colspan='7'>There are currently no bids to show</td></tr>";
                 endif; ?>
         </table>
     </section>
@@ -107,18 +123,31 @@ include './includes/header.php';
             <thead>
                 <tr>
                     <th>ACCEPTED_ID</th>
+                    <th>TENDER_NUMBER</th>
                     <th>ACCEPTED_BIDDING_ID</th>
                     <!-- <th>ACCEPTED_TENDER</th> -->
                 </tr>
             </thead>
-            <tbody class="acc_bids_body">
+            <tbody>
                 <?php if (mysqli_num_rows($accepted_bids) > 0) : foreach ($acc_bids as $acc_bid) :  ?>
                         <tr>
+
+                            <?php
+                            $acc_bidding_id = $acc_bid['ACCEPTED_BIDDING_ID'];
+                            $bidding_tender_id = mysqli_query($db, "SELECT BIDDING_TENDER_ID FROM BIDDING WHERE BIDDING_ID = $acc_bidding_id");
+                            $tender_id = mysqli_fetch_assoc($bidding_tender_id);
+                            $t_id = $tender_id['BIDDING_TENDER_ID'];
+
+                            $tender_number = mysqli_query($db, "SELECT TENDER_NUMBER FROM TENDER WHERE TENDER_ID = $t_id");
+                            $number = mysqli_fetch_assoc($tender_number);
+                            $t_number = $number['TENDER_NUMBER'];
+                            ?>
                             <td><?php echo $acc_bid['ACCEPTED_ID'] ?></td>
-                            <td><?php echo $acc_bid['ACCEPTED_BIDDING_ID'] ?></td>
+                            <td><?php echo $t_number ?></td>
+                            <td><?php echo $acc_bidding_id ?></td>
                         </tr>
                 <?php endforeach;
-                else : echo "You have not approved any bids yet";
+                else : echo "<tr><td colspan='3'>You have not approved any bids yet</td></tr>";
                 endif; ?>
             </tbody>
         </table>
@@ -149,35 +178,25 @@ include './includes/header.php';
                             <td><?php echo $paid_bid['PAYMENT_ACCEPTED_ID'] ?></td>
                         </tr>
                 <?php endforeach;
-                else : echo "You have not paid any bids yet";
+                else : echo "<tr><td colspan='6'>You have not paid any bids yet</td></tr>";
                 endif; ?>
             </tbody>
         </table>
     </section>
 
     <script>
-        document.onload = () => {
-            localStorage.setItem('bgColor', '#00bcd4');
-            localStorage.setItem('color', '#fff');
-        }
-
         const present_bids_body = document.querySelector('.present_bids_body');
         const rows = Array.from(present_bids_body.rows);
 
         rows.forEach((row) => {
             const len = row.children.length - 1;
             const btn = row.children[len];
-            console.log(btn);
             const accepted_id = row.children[0].textContent;
 
             btn.firstChild.addEventListener('click', () => {
-                if (!btn.classList.contains('btn-approved')) {
-                    btn.classList.add('btn-approved');
-                    btn.classList.remove('btn');
-                    btn.firstChild.style.backgroundColor = 'red';
-                    btn.textContent = 'approved';
-                    window.location.href = ` ./admin.php?accepted_id= ${accepted_id}`;
-                }
+                btn.firstChild.classList.add('btn-approved');
+                console.log("Button clicked");
+                window.location.href = ` ./admin.php?accepted_id= ${accepted_id}`;
             })
         })
     </script>

@@ -41,4 +41,3 @@ const Utils = {
   };
 
   excerptWidget.showMore(".js-show-more", ".js-excerpt");
-  

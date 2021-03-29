@@ -34,7 +34,7 @@ include './assets/apply_tender.php'
         <div class="intro-section-content">
             <h2>Browse for Tenders</h2>
             <div class="navigation">
-                <h3><a href="./index.php">Home</a></h3>
+                <h3><a href="./bidder.php">Dashboard</a></h3>
                 <i class="fas fa-chevron-right"></i>
                 <h3>Find Tender</h3>
             </div>
@@ -42,9 +42,10 @@ include './assets/apply_tender.php'
     </section>
 
     <!-- Featured tenders -->
+    <p style="margin-top: 2rem; font-size:large; margin-left: 2rem;">welcome <span style="color: var(--primary-color);"><?php echo $user;  ?></span></p>
     <section class="featured-tenders">
-        welcome <?php echo $user;  ?>
-        <h1>Featured Tenders</h1>
+        <!-- welcome <?php echo $user;  ?> -->
+        <h1 style="margin-top: -2rem;">Featured Tenders</h1>
         <?php if (mysqli_num_rows($result) > 0) : foreach ($tenders as $tender) :  ?>
                 <form method="POST" class="tender" action="./tenders.php" enctype="multipart/form-data">
                     <div class="short-details">
@@ -55,7 +56,7 @@ include './assets/apply_tender.php'
                     </div>
                     <div class="tender-description js-excerpt exerpt-hidden">
                         <h2>Description:</h2>
-                        <p id="p"><?php echo $tender["TENDER_DESC"]; ?></p>
+                        <p id="p"><?php echo nl2br($tender["TENDER_DESC"]); ?></p>
                         <textarea name="cover-letter" id="cover-letter" placeholder="Write a cover letter bidding for this tender" required></textarea>
                         <div class="bid-amount">
                             <label for="bid-amount">Bid amount: </label>
@@ -65,7 +66,7 @@ include './assets/apply_tender.php'
                     <a role="button" class="show js-show-more">show more ...</a>
                     <input type="hidden" name="id_tender" value="<?php echo $tender['TENDER_ID'] ?>">
                     <div class="buttons">
-                        <button onclick="window.location.href=' ./tenders.php?tender_id=<?php echo $tender['TENDER_ID'] ?>' ">Download files</button>
+                        <button onclick="window.location.href='./tenders.php?tender_id=<?php echo $tender['TENDER_ID'] ?>' ">Download files</button>
                         <button type="submit" name="apply" class="bid-tender">Apply Tender</button>
                     </div>
                 </form>
@@ -74,9 +75,8 @@ include './assets/apply_tender.php'
         endif; ?>
 
     </section>
-    <script src="./scripts/show_more.js"></script>
 </main>
-
+<script src="./scripts/show_more.js"></script>
 </body>
 
 </html>

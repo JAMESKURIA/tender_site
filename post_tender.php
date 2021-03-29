@@ -11,19 +11,18 @@ if (isset($_SESSION['admin_name'])) {
     header("Location: ./login.php");
 }
 
-echo 
 
 include './includes/header.php';
-include './assets/insert_tender.php';
+include './assets/handle_post_tender.php';
 
 ?>
 <main>
 
-    <section class="intro-section">
+    <section class="intro-section" style="height: 30vh;">
         <div class="intro-section-content">
             <h2>Post a Tender</h2>
             <div class="navigation">
-                <h3><a href="./index.php">Home</a></h3>
+                <h3><a href="./admin.php">Dashboard</a></h3>
                 <i class="fas fa-chevron-right"></i>
                 <h3>Post Tender</h3>
             </div>
@@ -63,6 +62,8 @@ include './assets/insert_tender.php';
         <button type="submit" id="post-tender-button" name="post-tender-button">Post Tender</button>
     </form>
 </main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
 </body>
 
 </html>

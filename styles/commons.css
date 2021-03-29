@@ -99,7 +99,8 @@ nav .navlinks {
   padding: 12px 7px;
 }
 .navlinks li:nth-of-type(1):hover a::after,
-.navlinks li:nth-of-type(2):hover a::after {
+.navlinks li:nth-of-type(2):hover a::after,
+.navlinks .manage:hover a::after {
   opacity: 1;
   transform: translateX(0px);
   transition: 0.5s ease-in-out;
@@ -225,11 +226,6 @@ nav .navlinks {
 }
 
 /* Tables */
-
-header {
-  background-color: rgba(0, 0, 0, 0.164);
-}
-
 table,
 th,
 td {
@@ -298,7 +294,30 @@ tr:nth-of-type(odd) {
   background-color: var(--secondary-color);
 }
 
-.biddings-section .btn .btn-approved {
+.btn button.btn-approved {
   color: #fff;
   background-color: var(--primary-color);
+}
+
+/* admin */
+.navlinks .manage:hover a::after {
+  opacity: 1;
+  transform: translateX(12%);
+  width: 80%;
+  transition: 0.5s ease-in-out;
+}
+.logout {
+  background-color: var(--secondary-color);
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  font-weight: 550;
+  color: red;
+  padding: 18px 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.logout:hover {
+  box-shadow: var(--hover-box-shadow);
 }
