@@ -13,7 +13,7 @@ if (isset($_GET['tender_id'])) {
     $run = mysqli_query($db, $query);
 
     $file = mysqli_fetch_assoc($run);
-    $file_path = './admin/uploads/' . $file['TENDER_FILE'];
+    $file_path = './uploads/' . $file['TENDER_FILE'];
     $file_name = basename($file_path);
 
     // echo $file_name;

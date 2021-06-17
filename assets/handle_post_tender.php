@@ -13,7 +13,7 @@ if (isset($_POST['post-tender-button'])) {
     if (isset($file_name)) {
         if (!empty($file_name)) {
 
-            $location = './admin/uploads/';
+            $location = './uploads/';
             $upload =  move_uploaded_file($tmp_name, $location . $file_name);
         }
     }
